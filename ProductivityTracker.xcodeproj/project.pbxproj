@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939570392205157C00C52C6B /* AppDelegate.swift */; };
-		9395703C2205157C00C52C6B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395703B2205157C00C52C6B /* ViewController.swift */; };
+		9395703C2205157C00C52C6B /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395703B2205157C00C52C6B /* MealViewController.swift */; };
 		9395703F2205157C00C52C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9395703D2205157C00C52C6B /* Main.storyboard */; };
 		939570412205157E00C52C6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939570402205157E00C52C6B /* Assets.xcassets */; };
 		939570442205157E00C52C6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 939570422205157E00C52C6B /* LaunchScreen.storyboard */; };
 		9395704F2205157E00C52C6B /* ProductivityTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395704E2205157E00C52C6B /* ProductivityTrackerTests.swift */; };
+		9395705C221B378700C52C6B /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395705B221B378700C52C6B /* Meal.swift */; };
+		9395705E221B409B00C52C6B /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395705D221B409B00C52C6B /* MealTableViewCell.swift */; };
+		93957060221B435300C52C6B /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395705F221B435300C52C6B /* RatingControl.swift */; };
+		93957062221BBB2B00C52C6B /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93957061221BBB2B00C52C6B /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,7 @@
 /* Begin PBXFileReference section */
 		939570362205157C00C52C6B /* ProductivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939570392205157C00C52C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9395703B2205157C00C52C6B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9395703B2205157C00C52C6B /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		9395703E2205157C00C52C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		939570402205157E00C52C6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		939570432205157E00C52C6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		9395704A2205157E00C52C6B /* ProductivityTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductivityTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9395704E2205157E00C52C6B /* ProductivityTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityTrackerTests.swift; sourceTree = "<group>"; };
 		939570502205157E00C52C6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9395705B221B378700C52C6B /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		9395705D221B409B00C52C6B /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
+		9395705F221B435300C52C6B /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		93957061221BBB2B00C52C6B /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +85,13 @@
 		939570382205157C00C52C6B /* ProductivityTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9395705F221B435300C52C6B /* RatingControl.swift */,
 				939570392205157C00C52C6B /* AppDelegate.swift */,
-				9395703B2205157C00C52C6B /* ViewController.swift */,
+				9395705B221B378700C52C6B /* Meal.swift */,
+				9395703B2205157C00C52C6B /* MealViewController.swift */,
 				9395703D2205157C00C52C6B /* Main.storyboard */,
+				93957061221BBB2B00C52C6B /* MealTableViewController.swift */,
+				9395705D221B409B00C52C6B /* MealTableViewCell.swift */,
 				939570402205157E00C52C6B /* Assets.xcassets */,
 				939570422205157E00C52C6B /* LaunchScreen.storyboard */,
 				939570452205157E00C52C6B /* Info.plist */,
@@ -197,8 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9395703C2205157C00C52C6B /* ViewController.swift in Sources */,
+				9395705C221B378700C52C6B /* Meal.swift in Sources */,
+				9395703C2205157C00C52C6B /* MealViewController.swift in Sources */,
 				9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */,
+				93957060221B435300C52C6B /* RatingControl.swift in Sources */,
+				93957062221BBB2B00C52C6B /* MealTableViewController.swift in Sources */,
+				9395705E221B409B00C52C6B /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52DE2SN9YN;
 				INFOPLIST_FILE = ProductivityTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52DE2SN9YN;
 				INFOPLIST_FILE = ProductivityTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -11,24 +11,29 @@ import XCTest
 
 class ProductivityTrackerTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    // MARK: meal class tests
+    // confirm the meal initializes and returns object
+    func testMealInitializionSucceeds() {
+        // zero rating
+        let zeroRatingMeal = Meal.init(name: "Zero", photo: nil, rating: 0)
+        XCTAssertNotNil(zeroRatingMeal)
+        
+        // highest positive rating
+        let positiveRatingMeal = Meal.init(name: "highest", photo: nil, rating: 5)
+        XCTAssertNotNil(positiveRatingMeal)
+        
+        // creates a nil meal because negative
+        let negativeMeal = Meal.init(name: "negative", photo: nil, rating: -4)
+        XCTAssertNil(negativeMeal)
+        
+        // rating exceeds maximum
+        let overMaxMeal = Meal.init(name: "over", photo: nil, rating: 7)
+        XCTAssertNil(overMaxMeal)
+        
+        // empty string
+        let emptyStringMeal = Meal.init(name: "", photo: nil, rating: 3)
+        XCTAssertNil(emptyStringMeal)
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }
