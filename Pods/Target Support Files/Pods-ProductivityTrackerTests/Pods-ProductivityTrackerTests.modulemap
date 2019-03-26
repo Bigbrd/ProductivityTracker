@@ -1,0 +1,6 @@
+framework module Pods_ProductivityTrackerTests {
+  umbrella header "Pods-ProductivityTrackerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
