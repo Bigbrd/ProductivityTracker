@@ -9,13 +9,12 @@
 // chart = remove data. have X axis on bottom, allow to configure day/week/month/24hrs. scroll horizontally. lock Y axis from 1 to 10
 // realm = load/save data.. other realm shit. create the whole "more than you, get data from everyone thing
 // signin = eureka form fill / account creation etc.
-// slider input. add a cool rotating slider
+// slider input = change colors when sliding?? fancier?
 // constraints and shit for all devices. rotation. etc. bugs.
 
 import UIKit
 import Charts
 import RealmSwift
-import HGCircularSlider
 
 class ResultsChartViewController: UIViewController {
 
@@ -24,15 +23,9 @@ class ResultsChartViewController: UIViewController {
     // this is for the X axis
     weak var axisFormatDelegate: IAxisValueFormatter?
     
-    // input
-    @IBOutlet weak var tfValue: UITextField!
-
-    // slider
-    @IBOutlet weak var circularSlider: CircularSlider!
-    @IBOutlet weak var roundsLabel: UILabel!
-    @IBOutlet weak var maxValueLabel: UILabel!
-    @IBOutlet weak var minValueLabel: UILabel!
-    @IBOutlet weak var currentValueLabel: UILabel!
+    // input slider
+    @IBOutlet weak var inputSlider: PRGRoundSlider!
+    let sliderStartValue:CGFloat = 0.5
     
     
     override func viewDidLoad() {
@@ -42,9 +35,11 @@ class ResultsChartViewController: UIViewController {
         // Do any additional setup after loading the view.
         updateChartWithData()
         
-        circularSlider.endPointValue = 1
-        updateTexts()
-        circularSlider.addTarget(self, action: #selector(updateTexts), for: .valueChanged)
+        // setupSlider customized message
+        inputSlider.messageForValue = { (value) in
+            return "\(Int(value*100))%"
+        }
+
     }
     
 
@@ -59,33 +54,14 @@ class ResultsChartViewController: UIViewController {
     */
 
     // MARK: Actions
-    // if value value is not empty, save the value of the text box (TODO:switch to slider), when the add button is pressed and clear the textbox. then update the chart
+    // save the value of the slider when the add button is pressed and reset the slider. then update the chart
     @IBAction func addButtonTapped(_ sender: Any) {
-        if let value = tfValue.text , value != "" {
-            let healthData = HealthData()
-            healthData.count = (NumberFormatter().number(from: value)?.intValue)!
-            healthData.save()
-            tfValue.text = ""
-        }
+        let healthData = HealthData()
+        healthData.count = Int(inputSlider.value*100)
+        healthData.save()
+        inputSlider.value = sliderStartValue
+        
         updateChartWithData()
-    }
-    
-    // slider input
-    @objc func updateTexts() {
-        let value = circularSlider.endPointValue
-        let ok = (circularSlider.maximumValue  / CGFloat(circularSlider.numberOfRounds))
-        let ff = ceil(value / ok)
-        
-        maxValueLabel.text = String(format: "%.0f", circularSlider.maximumValue)
-        minValueLabel.text = String(format: "%.0f", circularSlider.minimumValue)
-        
-        currentValueLabel.text = String(format: "%.0f", value)
-        roundsLabel.text = "Round N° " +  String(format: "%.0f", ff)
-    }
-    //not sure if needed, but adding because it was with all sliders
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // chart function that gets all data from database and creates the chart

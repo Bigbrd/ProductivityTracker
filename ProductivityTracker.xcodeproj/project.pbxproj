@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2B64A0E64EDD90E73D294021 /* Pods_ProductivityTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F905216AAD6F424122DF29E /* Pods_ProductivityTrackerTests.framework */; };
 		62F46F2B53050A7623C1B420 /* Pods_ProductivityTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B717E722EA0052EFB07041 /* Pods_ProductivityTracker.framework */; };
+		9325D046224A9464000E4AE5 /* PRGRoundSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D043224A9464000E4AE5 /* PRGRoundSlider.swift */; };
+		9325D047224A9464000E4AE5 /* PRGRoundRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D044224A9464000E4AE5 /* PRGRoundRangeSlider.swift */; };
+		9325D048224A9464000E4AE5 /* SliderKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D045224A9464000E4AE5 /* SliderKit.swift */; };
 		93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707A9E22455604004E20B3 /* ResultsChartViewController.swift */; };
 		93707AA122455797004E20B3 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707AA022455797004E20B3 /* HealthData.swift */; };
 		9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939570392205157C00C52C6B /* AppDelegate.swift */; };
@@ -37,6 +40,9 @@
 		3C05FB7B4AB1B508E7A2408D /* Pods-ProductivityTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductivityTracker.debug.xcconfig"; path = "Target Support Files/Pods-ProductivityTracker/Pods-ProductivityTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		828C281349638BD3203E13FA /* Pods-ProductivityTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductivityTracker.release.xcconfig"; path = "Target Support Files/Pods-ProductivityTracker/Pods-ProductivityTracker.release.xcconfig"; sourceTree = "<group>"; };
 		8F905216AAD6F424122DF29E /* Pods_ProductivityTrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductivityTrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9325D043224A9464000E4AE5 /* PRGRoundSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRGRoundSlider.swift; sourceTree = "<group>"; };
+		9325D044224A9464000E4AE5 /* PRGRoundRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRGRoundRangeSlider.swift; sourceTree = "<group>"; };
+		9325D045224A9464000E4AE5 /* SliderKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderKit.swift; sourceTree = "<group>"; };
 		93707A9E22455604004E20B3 /* ResultsChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsChartViewController.swift; sourceTree = "<group>"; };
 		93707AA022455797004E20B3 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		939570362205157C00C52C6B /* ProductivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,12 +93,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9325D042224A9464000E4AE5 /* PRGRoundSlider */ = {
+			isa = PBXGroup;
+			children = (
+				9325D043224A9464000E4AE5 /* PRGRoundSlider.swift */,
+				9325D044224A9464000E4AE5 /* PRGRoundRangeSlider.swift */,
+				9325D045224A9464000E4AE5 /* SliderKit.swift */,
+			);
+			path = PRGRoundSlider;
+			sourceTree = "<group>";
+		};
 		9395702D2205157C00C52C6B = {
 			isa = PBXGroup;
 			children = (
 				939570382205157C00C52C6B /* ProductivityTracker */,
-				9395704D2205157E00C52C6B /* ProductivityTrackerTests */,
 				939570372205157C00C52C6B /* Products */,
+				9395704D2205157E00C52C6B /* ProductivityTrackerTests */,
 				E4720CB8010DEF705644294B /* Pods */,
 				1E37D16679E86748A45E8A72 /* Frameworks */,
 			);
@@ -110,6 +126,7 @@
 		939570382205157C00C52C6B /* ProductivityTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9325D042224A9464000E4AE5 /* PRGRoundSlider */,
 				9395705F221B435300C52C6B /* RatingControl.swift */,
 				939570392205157C00C52C6B /* AppDelegate.swift */,
 				9395705B221B378700C52C6B /* Meal.swift */,
@@ -256,7 +273,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ProductivityTracker/Pods-ProductivityTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
-				"${BUILT_PRODUCTS_DIR}/HGCircularSlider/HGCircularSlider.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
@@ -265,7 +281,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGCircularSlider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
@@ -327,8 +342,11 @@
 			files = (
 				93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */,
 				9395705C221B378700C52C6B /* Meal.swift in Sources */,
+				9325D048224A9464000E4AE5 /* SliderKit.swift in Sources */,
+				9325D046224A9464000E4AE5 /* PRGRoundSlider.swift in Sources */,
 				93707AA122455797004E20B3 /* HealthData.swift in Sources */,
 				9395703C2205157C00C52C6B /* MealViewController.swift in Sources */,
+				9325D047224A9464000E4AE5 /* PRGRoundRangeSlider.swift in Sources */,
 				9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */,
 				93957060221B435300C52C6B /* RatingControl.swift in Sources */,
 				93957062221BBB2B00C52C6B /* MealTableViewController.swift in Sources */,

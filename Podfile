@@ -10,7 +10,6 @@ target 'ProductivityTracker' do
   # pod 'ChartsRealm'
   # pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
   pod 'RealmSwift'
-  pod 'HGCircularSlider'
 
   target 'ProductivityTrackerTests' do
     inherit! :search_paths

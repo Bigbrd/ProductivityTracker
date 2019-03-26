@@ -2,7 +2,6 @@ PODS:
   - Charts (3.2.2):
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
-  - HGCircularSlider (2.1.0)
   - Realm (3.11.2):
     - Realm/Headers (= 3.11.2)
   - Realm/Headers (3.11.2)
@@ -11,22 +10,19 @@ PODS:
 
 DEPENDENCIES:
   - Charts
-  - HGCircularSlider
   - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Charts
-    - HGCircularSlider
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
-  HGCircularSlider: 5b39e1c6eaf39c9e14859e242060196468389f17
   Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
   RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
 
-PODFILE CHECKSUM: b72a42f42db420db70f655730a5c1e9508581eef
+PODFILE CHECKSUM: 60e63cde5c6f1b9ea2d25999d56d5caf9512121f
 
 COCOAPODS: 1.6.1

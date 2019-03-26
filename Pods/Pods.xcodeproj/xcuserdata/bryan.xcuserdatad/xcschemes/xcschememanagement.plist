@@ -11,11 +11,6 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>HGCircularSlider.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-ProductivityTracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
