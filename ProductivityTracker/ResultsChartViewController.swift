@@ -7,8 +7,11 @@
 //
 // TODOs:
 // chart = remove data. have X axis on bottom, allow to configure day/week/month/24hrs. scroll horizontally. lock Y axis from 1 to 10
-// AWS = realm = load/save data.. other realm shit. create the whole "more than you, get data from everyone thing.
 // delete data points. go into a specifc point
+// Need to validate if you make a separate account you dont see other peoples data. then theres a toggle to see more than you, get data from everyone thing.
+// serverless api
+// file storage
+// push notifications
 
 // AWS = signin. i did bare bones, but lots of more stuff to do here... https://aws-amplify.github.io/docs/ios/authentication
 // low - AWS Pinpoint can log more things https://aws-amplify.github.io/docs/ios/analytics
