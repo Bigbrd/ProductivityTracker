@@ -6,10 +6,10 @@ amplify/backend/awscloudformation
 build/
 dist/
 node_modules/
-aws-exports.js
-awsconfiguration.json
 Pods/
 graphql/
 amplify/
-.graphqlconfig.yml
 ProductivityTrackerTests/
+aws-exports.js
+awsconfiguration.json
+*.yml
