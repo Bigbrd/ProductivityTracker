@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ae8-Wm-Wkg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hyc-VI-tev">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-iH-9j7">
-                                <rect key="frame" x="16" y="84" width="343" height="416"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dx8-iH-9j7">
+                                <rect key="frame" x="16" y="84" width="343" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dWU-qP-hDI">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -37,8 +37,8 @@
                                             <outletCollection property="gestureRecognizers" destination="Yqq-rA-KEi" appends="YES" id="o4L-T8-lcQ"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-HD-7Io" customClass="RatingControl" customModule="ProductivityTracker" customModuleProvider="target">
-                                        <rect key="frame" x="45.5" y="366" width="252" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-HD-7Io" customClass="RatingControl" customModule="ProductivityTracker" customModuleProvider="target">
+                                        <rect key="frame" x="45.5" y="366" width="252" height="44"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -70,7 +70,6 @@
                         <outlet property="nameTextField" destination="dWU-qP-hDI" id="lTG-c1-Lln"/>
                         <outlet property="photoImageView" destination="k9k-8z-pqs" id="hNb-vk-Dtb"/>
                         <outlet property="productivityLevelLabel" destination="ngS-1h-4vD" id="qyB-TK-oBj"/>
-                        <outlet property="productivityLevelSlider" destination="GdH-iK-gzG" id="AwE-md-Yk4"/>
                         <outlet property="ratingControl" destination="DNg-HD-7Io" id="dpP-BR-QVT"/>
                         <outlet property="saveButton" destination="yrW-0u-cKe" id="o8E-q7-1dF"/>
                     </connections>
@@ -172,7 +171,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th7-l8-jaH" customClass="ScatterChartView" customModule="Charts">
-                                <rect key="frame" x="15" y="68" width="343" height="303"/>
+                                <rect key="frame" x="15" y="98" width="341" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -205,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J1v-Pb-L95" customClass="PRGRoundSlider" customModule="ProductivityTracker">
-                                <rect key="frame" x="16" y="401" width="343" height="147"/>
+                                <rect key="frame" x="16" y="401" width="340" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -238,7 +237,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sds-Ob-xjC">
-                                <rect key="frame" x="16" y="39" width="343" height="29"/>
+                                <rect key="frame" x="16" y="64" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Hour of Day"/>
@@ -247,45 +246,8 @@
                                     <segment title="Month"/>
                                 </segments>
                             </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="r1O-Z1-Q9L"/>
-                    </view>
-                    <connections>
-                        <outlet property="inputSlider" destination="J1v-Pb-L95" id="jnm-bD-lXU"/>
-                        <outlet property="resultScatterChartView" destination="th7-l8-jaH" id="KiN-UG-uxM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S9p-Hn-X48" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5296.8000000000002" y="665.21739130434787"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="L9P-mG-A8N">
-            <objects>
-                <viewController id="VDG-ez-fOD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="o6C-8e-rLL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-dO-EC5">
-                                <rect key="frame" x="0.0" y="88" width="479" height="30"/>
-                                <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-iK-gzG">
-                                        <rect key="frame" x="-2" y="0.0" width="483" height="31"/>
-                                    </slider>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="GdH-iK-gzG" secondAttribute="trailing" id="0JV-J3-PfF"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRL-KE-Gs6">
-                                <rect key="frame" x="120" y="185" width="134" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit/save button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datetime stamp + navigation control so cancel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aY-Cp-TVU">
-                                <rect key="frame" x="0.0" y="59" width="355" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login/signup - use a plugin option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-7p-V0W">
+                                <rect key="frame" x="21" y="514" width="255" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -293,12 +255,18 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="yEV-nw-vRu"/>
+                        <viewLayoutGuide key="safeArea" id="r1O-Z1-Q9L"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vt1-Eg-t7A"/>
+                    <connections>
+                        <outlet property="inputSlider" destination="J1v-Pb-L95" id="jnm-bD-lXU"/>
+                        <outlet property="resultScatterChartView" destination="th7-l8-jaH" id="KiN-UG-uxM"/>
+                        <outlet property="signInStateLabel" destination="Dub-7p-V0W" id="6fk-Z2-CTX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vke-mk-jkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9p-Hn-X48" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5984.8000000000002" y="1298.5007496251876"/>
+            <point key="canvasLocation" x="6212" y="590.55472263868069"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Leb-t8-6P5">
@@ -343,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwj-1h-l56" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4678" y="1300"/>
+            <point key="canvasLocation" x="6921" y="578"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bhh-IZ-LFs">
@@ -381,35 +349,29 @@
             </objects>
             <point key="canvasLocation" x="1530" y="497"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="htd-vj-Fn0">
+        <!--Navigation Controller-->
+        <scene sceneID="ZE8-D6-jlY">
             <objects>
-                <viewController id="Jko-Cb-9Hh" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4CT-4G-vAY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login/signup - use a plugin option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dub-7p-V0W">
-                                <rect key="frame" x="16" y="89" width="255" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bxb-QV-ST7"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S6i-Gb-QxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hyc-VI-tev" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oIA-qm-Aoe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ae8-Wm-Wkg" kind="relationship" relationship="rootViewController" id="pNV-UT-sEL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eg5-gl-OgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3966" y="1300"/>
+            <point key="canvasLocation" x="5431" y="591"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="320" height="320"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="liP-X8-wnH"/>
+        <segue reference="pfZ-O1-SDA"/>
     </inferredMetricsTieBreakers>
 </document>

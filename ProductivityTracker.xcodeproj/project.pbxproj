@@ -17,6 +17,7 @@
 		9333A85B224B1E4900A5D47E /* AWSAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A85A224B1E4900A5D47E /* AWSAnalyticsService.swift */; };
 		9333A85D224B1F0100A5D47E /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A85C224B1F0100A5D47E /* AnalyticsService.swift */; };
 		9333A85F224B1F0E00A5D47E /* LocalAnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A85E224B1F0E00A5D47E /* LocalAnalyticsService.swift */; };
+		9333A861224B26F700A5D47E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A860224B26F700A5D47E /* LoginViewController.swift */; };
 		93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707A9E22455604004E20B3 /* ResultsChartViewController.swift */; };
 		9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939570392205157C00C52C6B /* AppDelegate.swift */; };
 		9395703C2205157C00C52C6B /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395703B2205157C00C52C6B /* MealViewController.swift */; };
@@ -52,6 +53,7 @@
 		9333A85A224B1E4900A5D47E /* AWSAnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSAnalyticsService.swift; sourceTree = "<group>"; };
 		9333A85C224B1F0100A5D47E /* AnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		9333A85E224B1F0E00A5D47E /* LocalAnalyticsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalAnalyticsService.swift; sourceTree = "<group>"; };
+		9333A860224B26F700A5D47E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93707A9E22455604004E20B3 /* ResultsChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsChartViewController.swift; sourceTree = "<group>"; };
 		939570362205157C00C52C6B /* ProductivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939570392205157C00C52C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				9395705B221B378700C52C6B /* Meal.swift */,
 				9395703B2205157C00C52C6B /* MealViewController.swift */,
 				9395703D2205157C00C52C6B /* Main.storyboard */,
+				9333A860224B26F700A5D47E /* LoginViewController.swift */,
 				93957061221BBB2B00C52C6B /* MealTableViewController.swift */,
 				9395705D221B409B00C52C6B /* MealTableViewCell.swift */,
 				939570402205157E00C52C6B /* Assets.xcassets */,
@@ -287,11 +290,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ProductivityTracker/Pods-ProductivityTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAppSync/AWSAppSync.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
@@ -302,11 +307,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAppSync.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
@@ -370,6 +377,7 @@
 				93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */,
 				9333A85D224B1F0100A5D47E /* AnalyticsService.swift in Sources */,
 				9395705C221B378700C52C6B /* Meal.swift in Sources */,
+				9333A861224B26F700A5D47E /* LoginViewController.swift in Sources */,
 				9325D048224A9464000E4AE5 /* SliderKit.swift in Sources */,
 				9333A85F224B1F0E00A5D47E /* LocalAnalyticsService.swift in Sources */,
 				9325D046224A9464000E4AE5 /* PRGRoundSlider.swift in Sources */,

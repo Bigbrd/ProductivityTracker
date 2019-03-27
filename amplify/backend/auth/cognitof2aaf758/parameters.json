@@ -1,14 +1,6 @@
 {
-    "identityPoolName": "productivitytracker_identitypool_8f68ef55",
-    "allowUnauthenticatedIdentities": true,
-    "thirdPartyAuth": false,
-    "lambdaLogPolicy": "productivitytracker_lambda_log_policy",
-    "openIdLambdaRoleName": "productivitytracker_openid_lambda_role",
-    "openIdRolePolicy": "productivitytracker_openid_pass_role_policy",
-    "openIdLambdaIAMPolicy": "productivitytracker_openid_lambda_iam_policy",
-    "openIdLogPolicy": "productivitytracker_openid_lambda_log_policy",
-    "authSelections": "identityPoolOnly",
     "resourceName": "cognitof2aaf758",
+    "authSelections": "identityPoolAndUserPool",
     "authRoleName": {
         "Ref": "AuthRoleName"
     },
@@ -26,5 +18,54 @@
             "UnauthRole",
             "Arn"
         ]
-    }
+    },
+    "userPoolName": "cognitof2aaf758_userpool_5cf2e084",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "cognitof2aaf758_sns-role",
+    "roleExternalId": "cognitof2aaf758_role_external_id",
+    "policyName": "cognitof2aaf758-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [
+        "Requires Lowercase",
+        "Requires Uppercase",
+        "Requires Numbers",
+        "Requires Symbols"
+    ],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "cognitof2aaf758_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "cognitof2aaf758_totp_lambda_role",
+    "mfaLambdaLogPolicy": "cognitof2aaf758_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "cognitof2aaf758_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "cognitof2aaf758_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "cognitof2aaf758_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "cognitof2aaf758_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "cognitof2aaf758_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": false,
+    "identityPoolName": "productivitytracker_identitypool_8f68ef55",
+    "allowUnauthenticatedIdentities": false,
+    "thirdPartyAuth": false,
+    "lambdaLogPolicy": "cognitof2aaf758_lambda_log_policy",
+    "openIdLambdaRoleName": "cognitof2aaf758_openid_lambda_role",
+    "openIdRolePolicy": "cognitof2aaf758_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "cognitof2aaf758_openid_lambda_iam_policy",
+    "openIdLogPolicy": "cognitof2aaf758_openid_lambda_log_policy",
+    "useDefault": "default"
 }

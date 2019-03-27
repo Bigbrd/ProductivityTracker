@@ -8,9 +8,9 @@
 // TODOs:
 // chart = remove data. have X axis on bottom, allow to configure day/week/month/24hrs. scroll horizontally. lock Y axis from 1 to 10
 // AWS = realm = load/save data.. other realm shit. create the whole "more than you, get data from everyone thing.
-// AWS = signin = eureka form fill / account creation etc.
 // delete data points. go into a specifc point
 
+// AWS = signin. i did bare bones, but lots of more stuff to do here... https://aws-amplify.github.io/docs/ios/authentication
 // low - AWS Pinpoint can log more things https://aws-amplify.github.io/docs/ios/analytics
 // low - slider input styling change colors when sliding?? fancier?
 // constraints and shit for all devices. rotation. etc. bugs.
@@ -18,6 +18,9 @@
 import UIKit
 import Charts
 import AWSAppSync
+import AWSMobileClient  //auth imports
+import AWSAuthCore
+import AWSAuthUI
 
 class ResultsChartViewController: UIViewController {
 
@@ -30,11 +33,62 @@ class ResultsChartViewController: UIViewController {
     @IBOutlet weak var inputSlider: PRGRoundSlider!
     let sliderStartValue:CGFloat = 0.5
     
+    // sign in label
+    @IBOutlet weak var signInStateLabel: UILabel!
+    
     //Reference AppSync client
     var appSyncClient: AWSAppSyncClient?
+    // reference the analytics for logging
+    var analyticsService: AnalyticsService? = nil
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // AWS login
+        AWSMobileClient.sharedInstance().initialize { (userState, error) in
+            if let userState = userState {
+                switch(userState){
+                case .signedIn:
+                    DispatchQueue.main.async {
+                        self.signInStateLabel.text = "Logged In"
+                    }
+                case .signedOut:
+                    AWSMobileClient.sharedInstance().showSignIn(navigationController: self.navigationController!, { (userState, error) in
+                        if(error == nil){       //Successful signin
+                            DispatchQueue.main.async {
+                                self.signInStateLabel.text = "Logged In"
+                            }
+                        }
+                    })
+                default:
+                    AWSMobileClient.sharedInstance().signOut()
+                }
+                
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        // Get a reference to the analytics service from the AppDelegate
+        analyticsService = (UIApplication.shared.delegate as! AppDelegate).analyticsService
+        
+        // Instantiate sign-in UI from the SDK library
+        if !AWSSignInManager.sharedInstance().isLoggedIn {
+            AWSAuthUIViewController.presentViewController(
+                with: self.navigationController!,
+                configuration: nil,
+                completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+                    if error != nil {
+                        self.analyticsService?.recordEvent("_userauth.auth_fail",
+                                                           parameters: ["message":String(describing:error)], metrics: nil)
+                    } else {
+                        self.analyticsService?.recordEvent("_userauth.sign_in",
+                                                           parameters: ["userid":AWSIdentityManager.default().identityId!], metrics: nil)
+                    }
+            }
+            )
+        }
         
         // AWS setup
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
