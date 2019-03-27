@@ -14,7 +14,6 @@
 
 import UIKit
 import Charts
-import RealmSwift//todo remove for aws instead
 import AWSAppSync
 
 class ResultsChartViewController: UIViewController {
@@ -106,16 +105,6 @@ class ResultsChartViewController: UIViewController {
         }
         
     }
-    
-//    // database function that gets data from database
-//    func getHealthDataFromDatabase() -> Results<HealthData> {
-//        do {
-//            let realm = try Realm()
-//            return realm.objects(HealthData.self)
-//        } catch let error as NSError {
-//            fatalError(error.localizedDescription)
-//        }
-//    }
     
     // aws db functions
     // Call the runMutation(), runQuery(), and subscribe() methods from your app code, such as from a button click or when your app starts in viewDidLoad(). You will see data being stored and retrieved in your backend from the Xcode console

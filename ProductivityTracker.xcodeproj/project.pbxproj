@@ -15,7 +15,6 @@
 		9333A857224AEB5C00A5D47E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9333A856224AEB5C00A5D47E /* awsconfiguration.json */; };
 		9333A859224AF37E00A5D47E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A858224AF37D00A5D47E /* API.swift */; };
 		93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707A9E22455604004E20B3 /* ResultsChartViewController.swift */; };
-		93707AA122455797004E20B3 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707AA022455797004E20B3 /* HealthData.swift */; };
 		9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939570392205157C00C52C6B /* AppDelegate.swift */; };
 		9395703C2205157C00C52C6B /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9395703B2205157C00C52C6B /* MealViewController.swift */; };
 		9395703F2205157C00C52C6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9395703D2205157C00C52C6B /* Main.storyboard */; };
@@ -48,7 +47,6 @@
 		9333A856224AEB5C00A5D47E /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		9333A858224AF37D00A5D47E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		93707A9E22455604004E20B3 /* ResultsChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsChartViewController.swift; sourceTree = "<group>"; };
-		93707AA022455797004E20B3 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		939570362205157C00C52C6B /* ProductivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939570392205157C00C52C6B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9395703B2205157C00C52C6B /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				939570402205157E00C52C6B /* Assets.xcassets */,
 				939570422205157E00C52C6B /* LaunchScreen.storyboard */,
 				939570452205157E00C52C6B /* Info.plist */,
-				93707AA022455797004E20B3 /* HealthData.swift */,
 				93707A9E22455604004E20B3 /* ResultsChartViewController.swift */,
 			);
 			path = ProductivityTracker;
@@ -283,8 +280,6 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -295,8 +290,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +352,6 @@
 				9395705C221B378700C52C6B /* Meal.swift in Sources */,
 				9325D048224A9464000E4AE5 /* SliderKit.swift in Sources */,
 				9325D046224A9464000E4AE5 /* PRGRoundSlider.swift in Sources */,
-				93707AA122455797004E20B3 /* HealthData.swift in Sources */,
 				9395703C2205157C00C52C6B /* MealViewController.swift in Sources */,
 				9325D047224A9464000E4AE5 /* PRGRoundRangeSlider.swift in Sources */,
 				9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */,

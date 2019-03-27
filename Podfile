@@ -7,9 +7,6 @@ target 'ProductivityTracker' do
 
   # Pods for ProductivityTracker
   pod 'Charts'
-  # pod 'ChartsRealm'
-  # pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'master'
-  pod 'RealmSwift'
   pod 'AWSCore', '~> 2.9.0'
   pod 'AWSAppSync', '~> 2.10.0'
 

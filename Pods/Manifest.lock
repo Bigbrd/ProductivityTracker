@@ -8,11 +8,6 @@ PODS:
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
   - ReachabilitySwift (4.3.0)
-  - Realm (3.11.2):
-    - Realm/Headers (= 3.11.2)
-  - Realm/Headers (3.11.2)
-  - RealmSwift (3.11.2):
-    - Realm (= 3.11.2)
   - SQLite.swift (0.11.5):
     - SQLite.swift/standard (= 0.11.5)
   - SQLite.swift/standard (0.11.5)
@@ -21,7 +16,6 @@ DEPENDENCIES:
   - AWSAppSync (~> 2.10.0)
   - AWSCore (~> 2.9.0)
   - Charts
-  - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,8 +23,6 @@ SPEC REPOS:
     - AWSCore
     - Charts
     - ReachabilitySwift
-    - Realm
-    - RealmSwift
     - SQLite.swift
 
 SPEC CHECKSUMS:
@@ -38,10 +30,8 @@ SPEC CHECKSUMS:
   AWSCore: 5cbb6c6ccfad4b55e494c2e8df87781512f7881e
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
-  Realm: 864477d028db77f7c5a0cba64a4892ad53db128a
-  RealmSwift: 12b8262fc08020b47de4fd88eb3d5c9425b34ec7
   SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
 
-PODFILE CHECKSUM: 91112afd560f787f3fa2b476576cf19cf464de51
+PODFILE CHECKSUM: 5177a58c677b08b445cca30dfcbc2b1b5405c78d
 
 COCOAPODS: 1.6.1
