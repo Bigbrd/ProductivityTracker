@@ -7,5 +7,17 @@
 				"securityType": "API_KEY"
 			}
 		}
+	},
+	"auth": {
+		"cognitof2aaf758": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"productivitytracker": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }

@@ -9,6 +9,8 @@ target 'ProductivityTracker' do
   pod 'Charts'
   pod 'AWSCore', '~> 2.9.0'
   pod 'AWSAppSync', '~> 2.10.0'
+  pod 'AWSPinpoint', '~> 2.9.0'
+  pod 'AWSMobileClient', '~> 2.9.0'
 
   target 'ProductivityTrackerTests' do
     inherit! :search_paths

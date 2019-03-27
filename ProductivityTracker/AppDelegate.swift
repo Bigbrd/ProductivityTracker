@@ -15,8 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var appSyncClient: AWSAppSyncClient?
+    var analyticsService: AnalyticsService?
+
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         do {
             // You can choose the directory in which AppSync stores its persistent cache databases
             let cacheConfiguration = try AWSAppSyncCacheConfiguration()
@@ -29,7 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print("Error initializing appsync client. \(error)")
         }
-        // other methods
+        
+        // Initialize Pinpoint analytics service
+        // analyticsService = LocalAnalyticsService() // this one records events to the debug log
+        analyticsService = AWSAnalyticsService()
+        
         return true
     }
 

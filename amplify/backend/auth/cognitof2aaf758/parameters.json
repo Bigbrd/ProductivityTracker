@@ -1,0 +1,30 @@
+{
+    "identityPoolName": "productivitytracker_identitypool_8f68ef55",
+    "allowUnauthenticatedIdentities": true,
+    "thirdPartyAuth": false,
+    "lambdaLogPolicy": "productivitytracker_lambda_log_policy",
+    "openIdLambdaRoleName": "productivitytracker_openid_lambda_role",
+    "openIdRolePolicy": "productivitytracker_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "productivitytracker_openid_lambda_iam_policy",
+    "openIdLogPolicy": "productivitytracker_openid_lambda_log_policy",
+    "authSelections": "identityPoolOnly",
+    "resourceName": "cognitof2aaf758",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    }
+}

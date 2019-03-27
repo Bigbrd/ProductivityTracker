@@ -7,9 +7,12 @@
 //
 // TODOs:
 // chart = remove data. have X axis on bottom, allow to configure day/week/month/24hrs. scroll horizontally. lock Y axis from 1 to 10
-// realm = load/save data.. other realm shit. create the whole "more than you, get data from everyone thing
-// signin = eureka form fill / account creation etc.
-// slider input = change colors when sliding?? fancier?
+// AWS = realm = load/save data.. other realm shit. create the whole "more than you, get data from everyone thing.
+// AWS = signin = eureka form fill / account creation etc.
+// delete data points. go into a specifc point
+
+// low - AWS Pinpoint can log more things https://aws-amplify.github.io/docs/ios/analytics
+// low - slider input styling change colors when sliding?? fancier?
 // constraints and shit for all devices. rotation. etc. bugs.
 
 import UIKit
