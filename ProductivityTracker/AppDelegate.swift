@@ -8,6 +8,7 @@
 
 import UIKit
 import AWSAppSync
+import AWSMobileClient  //auth imports
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,8 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // AppSync configuration & client initialization
             let appSyncServiceConfig = try AWSAppSyncServiceConfig()
             let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
+                                                                  credentialsProvider: AWSMobileClient.sharedInstance(),
                                                                   cacheConfiguration: cacheConfiguration)
             appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+            // Set id as the cache key for objects. See architecture section for details
+            appSyncClient?.apolloClient?.cacheKeyForObject = { $0["id"] }
         } catch {
             print("Error initializing appsync client. \(error)")
         }

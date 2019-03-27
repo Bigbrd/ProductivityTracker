@@ -9,12 +9,12 @@
 // chart = remove data. have X axis on bottom, allow to configure day/week/month/24hrs. scroll horizontally. lock Y axis from 1 to 10
 // delete data points. go into a specifc point
 // Need to validate if you make a separate account you dont see other peoples data. then theres a toggle to see more than you, get data from everyone thing.
-// serverless api
 // file storage
 // push notifications
 
 // AWS = signin. i did bare bones, but lots of more stuff to do here... https://aws-amplify.github.io/docs/ios/authentication
 // low - AWS Pinpoint can log more things https://aws-amplify.github.io/docs/ios/analytics
+// low - serverless api - meh, did it mainly. this would just be if I wanted custom functions now
 // low - slider input styling change colors when sliding?? fancier?
 // constraints and shit for all devices. rotation. etc. bugs.
 
@@ -93,7 +93,7 @@ class ResultsChartViewController: UIViewController {
             )
         }
         
-        // AWS setup
+        // AWS setup AppSync
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
@@ -176,25 +176,29 @@ class ResultsChartViewController: UIViewController {
         let mutationInput = CreateHealthDataInput(datetime: now, value: Int(inputSlider.value*100))
         appSyncClient?.perform(mutation: CreateHealthDataMutation(input: mutationInput)) { [weak self] (result, error) in
             // ... do whatever error checking or processing you wish here
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
             self?.inputSlider.value = (self?.sliderStartValue)!
             self?.updateChartWithData()
         }
     }
 
-    var discard: Cancellable?
-    func subscribe() {
-        do {
-            discard = try appSyncClient?.subscribe(subscription: OnCreateHealthDataSubscription(), resultHandler: { (result, transaction, error) in
-                if let result = result {
-                    print(result.data!.onCreateHealthData!.datetime + " " + String(result.data!.onCreateHealthData!.value))
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-            })
-        } catch {
-            print("Error starting subscription.")
-        }
-    }
+//    var discard: Cancellable?
+//    func subscribe() {
+//        do {
+//            discard = try appSyncClient?.subscribe(subscription: OnCreateHealthDataSubscription(), resultHandler: { (result, transaction, error) in
+//                if let result = result {
+//                    print(result.data!.onCreateHealthData!.datetime + " " + String(result.data!.onCreateHealthData!.value))
+//                } else if let error = error {
+//                    print(error.localizedDescription)
+//                }
+//            })
+//        } catch {
+//            print("Error starting subscription.")
+//        }
+//    }
     
 }
 
