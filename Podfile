@@ -9,10 +9,12 @@ target 'ProductivityTracker' do
   pod 'Charts'
   pod 'AWSCore', '~> 2.9.0'
   pod 'AWSAppSync', '~> 2.10.0'
-  pod 'AWSPinpoint', '~> 2.9.0'        # analytics dependency
+  pod 'AWSPinpoint', '~> 2.9.0'         # analytics dependency
   pod 'AWSMobileClient', '~> 2.9.0'
-  pod 'AWSAuthUI', '~> 2.9.0'          # Optional dependency required to use drop-in UI
-  pod 'AWSUserPoolsSignIn', '~> 2.9.0' # Optional dependency required to use drop-in UI
+  pod 'AWSAuthUI', '~> 2.9.0'           # Optional dependency required to use drop-in UI
+  pod 'AWSUserPoolsSignIn', '~> 2.9.0'  # Optional dependency required to use drop-in UI
+  # pod 'AWSS3', '~> 2.9.0'   		# For file transfers
+  pod 'GoogleSignIn'
 
   target 'ProductivityTrackerTests' do
     inherit! :search_paths
