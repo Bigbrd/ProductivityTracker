@@ -12,6 +12,8 @@
 		9325D046224A9464000E4AE5 /* PRGRoundSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D043224A9464000E4AE5 /* PRGRoundSlider.swift */; };
 		9325D047224A9464000E4AE5 /* PRGRoundRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D044224A9464000E4AE5 /* PRGRoundRangeSlider.swift */; };
 		9325D048224A9464000E4AE5 /* SliderKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9325D045224A9464000E4AE5 /* SliderKit.swift */; };
+		9333A857224AEB5C00A5D47E /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 9333A856224AEB5C00A5D47E /* awsconfiguration.json */; };
+		9333A859224AF37E00A5D47E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9333A858224AF37D00A5D47E /* API.swift */; };
 		93707A9F22455604004E20B3 /* ResultsChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707A9E22455604004E20B3 /* ResultsChartViewController.swift */; };
 		93707AA122455797004E20B3 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93707AA022455797004E20B3 /* HealthData.swift */; };
 		9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939570392205157C00C52C6B /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 		9325D043224A9464000E4AE5 /* PRGRoundSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRGRoundSlider.swift; sourceTree = "<group>"; };
 		9325D044224A9464000E4AE5 /* PRGRoundRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PRGRoundRangeSlider.swift; sourceTree = "<group>"; };
 		9325D045224A9464000E4AE5 /* SliderKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderKit.swift; sourceTree = "<group>"; };
+		9333A856224AEB5C00A5D47E /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		9333A858224AF37D00A5D47E /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
 		93707A9E22455604004E20B3 /* ResultsChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsChartViewController.swift; sourceTree = "<group>"; };
 		93707AA022455797004E20B3 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		939570362205157C00C52C6B /* ProductivityTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductivityTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +130,8 @@
 		939570382205157C00C52C6B /* ProductivityTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9333A858224AF37D00A5D47E /* API.swift */,
+				9333A856224AEB5C00A5D47E /* awsconfiguration.json */,
 				9325D042224A9464000E4AE5 /* PRGRoundSlider */,
 				9395705F221B435300C52C6B /* RatingControl.swift */,
 				939570392205157C00C52C6B /* AppDelegate.swift */,
@@ -247,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9333A857224AEB5C00A5D47E /* awsconfiguration.json in Resources */,
 				939570442205157E00C52C6B /* LaunchScreen.storyboard in Resources */,
 				939570412205157E00C52C6B /* Assets.xcassets in Resources */,
 				9395703F2205157C00C52C6B /* Main.storyboard in Resources */,
@@ -272,17 +279,25 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ProductivityTracker/Pods-ProductivityTracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSAppSync/AWSAppSync.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAppSync.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -350,6 +365,7 @@
 				9395703A2205157C00C52C6B /* AppDelegate.swift in Sources */,
 				93957060221B435300C52C6B /* RatingControl.swift in Sources */,
 				93957062221BBB2B00C52C6B /* MealTableViewController.swift in Sources */,
+				9333A859224AF37E00A5D47E /* API.swift in Sources */,
 				9395705E221B409B00C52C6B /* MealTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

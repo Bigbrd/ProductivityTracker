@@ -1,0 +1,5 @@
+type HealthData @model {
+  id: ID!
+  datetime: String!
+  value: Int!
+}

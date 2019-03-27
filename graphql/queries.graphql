@@ -1,0 +1,22 @@
+# this is an auto generated file. This will be overwritten
+query GetHealthData($id: ID!) {
+  getHealthData(id: $id) {
+    id
+    datetime
+    value
+  }
+}
+query ListHealthDatas(
+  $filter: ModelHealthDataFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHealthDatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      datetime
+      value
+    }
+    nextToken
+  }
+}

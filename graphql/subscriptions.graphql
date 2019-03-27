@@ -1,0 +1,22 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateHealthData {
+  onCreateHealthData {
+    id
+    datetime
+    value
+  }
+}
+subscription OnUpdateHealthData {
+  onUpdateHealthData {
+    id
+    datetime
+    value
+  }
+}
+subscription OnDeleteHealthData {
+  onDeleteHealthData {
+    id
+    datetime
+    value
+  }
+}

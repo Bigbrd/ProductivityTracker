@@ -14,7 +14,8 @@
 
 import UIKit
 import Charts
-import RealmSwift
+import RealmSwift//todo remove for aws instead
+import AWSAppSync
 
 class ResultsChartViewController: UIViewController {
 
@@ -27,12 +28,18 @@ class ResultsChartViewController: UIViewController {
     @IBOutlet weak var inputSlider: PRGRoundSlider!
     let sliderStartValue:CGFloat = 0.5
     
+    //Reference AppSync client
+    var appSyncClient: AWSAppSyncClient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        axisFormatDelegate = self
         
-        // Do any additional setup after loading the view.
+        // AWS setup
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+        // chart setup
+        axisFormatDelegate = self
         updateChartWithData()
         
         // setupSlider customized message
@@ -56,39 +63,87 @@ class ResultsChartViewController: UIViewController {
     // MARK: Actions
     // save the value of the slider when the add button is pressed and reset the slider. then update the chart
     @IBAction func addButtonTapped(_ sender: Any) {
-        let healthData = HealthData()
-        healthData.count = Int(inputSlider.value*100)
-        healthData.save()
-        inputSlider.value = sliderStartValue
+//        let healthData = HealthData()
+//        healthData.count = Int(inputSlider.value*100)
+//        healthData.save()
+        runMutation()
+//        inputSlider.value = sliderStartValue
         
-        updateChartWithData()
+//        updateChartWithData()
     }
     
     // chart function that gets all data from database and creates the chart
     func updateChartWithData() {
         var dataEntries: [ChartDataEntry] = []
-        let healthData = getHealthDataFromDatabase()
-        for i in 0..<healthData.count {
-            // set the values here (TODO:switch i to date)
-            let timeIntervalForDate: TimeInterval = healthData[i].date.timeIntervalSince1970
-            let dataEntry = ChartDataEntry(x: Double(timeIntervalForDate), y: Double(healthData[i].count))
-            dataEntries.append(dataEntry)
-        }
-        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Health data")
-        let chartData = ScatterChartData(dataSet: chartDataSet)
-        resultScatterChartView.data = chartData
+        var healthData: [ListHealthDatasQuery.Data.ListHealthData.Item?] = []
         
-        let xaxis = resultScatterChartView.xAxis
-        xaxis.valueFormatter = axisFormatDelegate
+        // run query here to get the data
+        appSyncClient?.fetch(query: ListHealthDatasQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            healthData = (result?.data?.listHealthDatas?.items)!
+            for i in 0..<healthData.count {
+                // convert string to date
+                let dateValue = healthData[i]!.datetime
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "HH:mm"
+                //according to date format your date string
+                guard let dateFormattedValue = dateFormatter.date(from: dateValue) else {
+                    fatalError()
+                }
+                let timeIntervalForDate: TimeInterval = dateFormattedValue.timeIntervalSince1970
+                let dataEntry = ChartDataEntry(x: Double(timeIntervalForDate), y: Double(healthData[i]!.value))
+                dataEntries.append(dataEntry)
+            }
+            let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Health data")
+            let chartData = ScatterChartData(dataSet: chartDataSet)
+            self.resultScatterChartView.data = chartData
+            
+            let xaxis = self.resultScatterChartView.xAxis
+            xaxis.valueFormatter = self.axisFormatDelegate
+        }
+        
     }
     
-    // database function that gets data from database
-    func getHealthDataFromDatabase() -> Results<HealthData> {
+//    // database function that gets data from database
+//    func getHealthDataFromDatabase() -> Results<HealthData> {
+//        do {
+//            let realm = try Realm()
+//            return realm.objects(HealthData.self)
+//        } catch let error as NSError {
+//            fatalError(error.localizedDescription)
+//        }
+//    }
+    
+    // aws db functions
+    // Call the runMutation(), runQuery(), and subscribe() methods from your app code, such as from a button click or when your app starts in viewDidLoad(). You will see data being stored and retrieved in your backend from the Xcode console
+    func runMutation(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let now = dateFormatter.string(from: NSDate() as Date)
+        
+        let mutationInput = CreateHealthDataInput(datetime: now, value: Int(inputSlider.value*100))
+        appSyncClient?.perform(mutation: CreateHealthDataMutation(input: mutationInput)) { [weak self] (result, error) in
+            // ... do whatever error checking or processing you wish here
+            self?.inputSlider.value = (self?.sliderStartValue)!
+            self?.updateChartWithData()
+        }
+    }
+
+    var discard: Cancellable?
+    func subscribe() {
         do {
-            let realm = try Realm()
-            return realm.objects(HealthData.self)
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
+            discard = try appSyncClient?.subscribe(subscription: OnCreateHealthDataSubscription(), resultHandler: { (result, transaction, error) in
+                if let result = result {
+                    print(result.data!.onCreateHealthData!.datetime + " " + String(result.data!.onCreateHealthData!.value))
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            })
+        } catch {
+            print("Error starting subscription.")
         }
     }
     
