@@ -21,27 +21,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        do {
-            // You can choose the directory in which AppSync stores its persistent cache databases
-            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
-            
-            // AppSync configuration & client initialization
-            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
-            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: appSyncServiceConfig,
-                                                                  credentialsProvider: AWSMobileClient.sharedInstance(),
-                                                                  cacheConfiguration: cacheConfiguration)
-            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
-            // Set id as the cache key for objects. See architecture section for details
-            appSyncClient?.apolloClient?.cacheKeyForObject = { $0["id"] }
-        } catch {
-            print("Error initializing appsync client. \(error)")
-        }
+        // Initializes the api with auth
+        initializeAppSync()
         
         // Initialize Pinpoint analytics service
         // analyticsService = LocalAnalyticsService() // this one records events to the debug log
         analyticsService = AWSAnalyticsService()
         
         return true
+    }
+    
+    func initializeAppSync() {
+        do {
+            // You can choose the directory in which AppSync stores its persistent cache databases
+            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+            
+            // Initialize the AWS AppSync configuration
+            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig: AWSAppSyncServiceConfig(),
+                                                                  userPoolsAuthProvider: {
+                                                                    class MyCognitoUserPoolsAuthProvider : AWSCognitoUserPoolsAuthProviderAsync {
+                                                                        func getLatestAuthToken(_ callback: @escaping (String?, Error?) -> Void) {
+                                                                            AWSMobileClient.sharedInstance().getTokens { (tokens, error) in
+                                                                                if error != nil {
+                                                                                    callback(nil, error)
+                                                                                } else {
+                                                                                    callback(tokens?.idToken?.tokenString, nil)
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    return MyCognitoUserPoolsAuthProvider()}(),
+                                                                  cacheConfiguration: cacheConfiguration)
+            
+            // Initialize the AWS AppSync client
+            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+        } catch {
+            print("Error initializing appsync client. \(error)")
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -76,22 +76,22 @@ class ResultsChartViewController: UIViewController {
         // Get a reference to the analytics service from the AppDelegate
         analyticsService = (UIApplication.shared.delegate as! AppDelegate).analyticsService
         
-        // Instantiate sign-in UI from the SDK library
-        if !AWSSignInManager.sharedInstance().isLoggedIn {
-            AWSAuthUIViewController.presentViewController(
-                with: self.navigationController!,
-                configuration: nil,
-                completionHandler: { (provider: AWSSignInProvider, error: Error?) in
-                    if error != nil {
-                        self.analyticsService?.recordEvent("_userauth.auth_fail",
-                                                           parameters: ["message":String(describing:error)], metrics: nil)
-                    } else {
-                        self.analyticsService?.recordEvent("_userauth.sign_in",
-                                                           parameters: ["userid":AWSIdentityManager.default().identityId!], metrics: nil)
-                    }
-            }
-            )
-        }
+//        // Instantiate sign-in UI from the SDK library - dont need this as it is a dupe of logins. good example of analytics logs tho
+//        if !AWSSignInManager.sharedInstance().isLoggedIn {
+//            AWSAuthUIViewController.presentViewController(
+//                with: self.navigationController!,
+//                configuration: nil,
+//                completionHandler: { (provider: AWSSignInProvider, error: Error?) in
+//                    if error != nil {
+//                        self.analyticsService?.recordEvent("_userauth.auth_fail",
+//                                                           parameters: ["message":String(describing:error)], metrics: nil)
+//                    } else {
+//                        self.analyticsService?.recordEvent("_userauth.sign_in",
+//                                                           parameters: ["userid":AWSIdentityManager.default().identityId!], metrics: nil)
+//                    }
+//            }
+//            )
+//        }
         
         // AWS setup AppSync
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

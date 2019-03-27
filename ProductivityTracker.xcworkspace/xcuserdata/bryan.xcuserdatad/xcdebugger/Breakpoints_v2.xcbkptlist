@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.502907"
+            timestampString = "575410245.9228311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "128"
@@ -22,11 +22,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.503861"
+            timestampString = "575410245.973454"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
@@ -35,14 +35,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ProductivityTracker.ResultsChartViewController.runMutation() -&gt; ()"
                   moduleName = "ProductivityTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
-                  timestampString = "575403865.729182"
+                  timestampString = "575408506.134515"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "177"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "730">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;AWSAppSync.GraphQLResult&lt;ProductivityTracker.CreateHealthDataMutation.Data&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProductivityTracker.ResultsChartViewController.runMutation() -&gt; ()"
                   moduleName = "ProductivityTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
-                  timestampString = "575403865.733591"
+                  timestampString = "575408506.1391391"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "177"
@@ -70,11 +70,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.504513"
+            timestampString = "575410245.975553"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.505142"
+            timestampString = "575410245.977335"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "140"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.50569"
+            timestampString = "575410245.9792629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -154,7 +154,7 @@
                   moduleName = "ProductivityTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
-                  timestampString = "575403865.7532589"
+                  timestampString = "575410258.528914"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "145"
@@ -169,7 +169,7 @@
                   moduleName = "ProductivityTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
-                  timestampString = "575403865.756355"
+                  timestampString = "575410258.538868"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "145"
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.5061229"
+            timestampString = "575410245.981025"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
@@ -198,11 +198,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.50676"
+            timestampString = "575410245.982497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
@@ -214,11 +214,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.507843"
+            timestampString = "575410245.983912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
@@ -230,16 +230,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ProductivityTracker/ResultsChartViewController.swift"
-            timestampString = "575403865.508463"
+            timestampString = "575410245.98576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
             landmarkName = "runMutation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductivityTracker/ResultsChartViewController.swift"
+            timestampString = "575410245.9876159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProductivityTracker.ResultsChartViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ProductivityTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
+                  timestampString = "575410258.560133"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;AWSMobileClient.UserState&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in ProductivityTracker.ResultsChartViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ProductivityTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryan/Documents/SwiftProjects/ProductivityTracker/ProductivityTracker/ProductivityTracker/ResultsChartViewController.swift"
+                  timestampString = "575410258.569602"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "66">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "API.swift"
+            timestampString = "575410245.989086"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
+            landmarkName = "operationString"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProductivityTracker/AppDelegate.swift"
+            timestampString = "575410245.990453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "initializeAppSync()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
